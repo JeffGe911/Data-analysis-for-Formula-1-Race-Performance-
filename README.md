@@ -22,10 +22,9 @@ The Kaggle dataset includes:
 I preprocessed everything for the 2022-2024 races only.
 
 ### API Integration
-I also grabbed driver info from the OpenF1 API since it has cleaner team names and broadcast names, which helped match drivers across datasets:
+I also grabbed driver info from the OpenF1 API since it has cleaner team names and broadcast names; it played a key role in ensuring consistency across merged datasets.
 ```python
 import requests
-
 response = requests.get("https://api.openf1.org/v1/drivers?year=2023")
 if response.status_code == 200:
     drivers_data = response.json()
