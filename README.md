@@ -17,8 +17,9 @@ The Kaggle dataset includes:
 - `lap_times.csv` – every lap time for every driver
 - `pit_stops.csv` – pit stop lap numbers and durations
 - `drivers.csv` – driver names and codes
+- /drivers, /races, /laps - Supplement CSVs from API with team/driver metadata, enrich with real-time identifiers
 
-I preprocessed everything to just the 2022-2024 races.
+I preprocessed everything for the 2022-2024 races only.
 
 ### API Integration
 I also grabbed driver info from the OpenF1 API since it has cleaner team names and broadcast names, which helped match drivers across datasets:
