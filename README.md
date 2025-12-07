@@ -8,6 +8,7 @@ My project looks at Formula 1 pit stop efficiency and lap time consistency from 
 | Source | Link | Format | Description |
 |--------|------|--------|-------------|
 | Formula 1 World Championship (1950–2024) | [Kaggle Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) | CSV | Official F1 race data including races, results, drivers, lap times, and pit stops |
+| Formula 1 Pit Stop Dataset (2022–2024) | [Kaggle Link](https://www.kaggle.com/datasets/akashrane2609/formula-1-pit-stop-dataset) | CSV | Detailed pit-stop events, tire info, lap numbers, weather conditions |
 | OpenF1 API | https://api.openf1.org | JSON (REST API) | Driver and team metadata (broadcast names, team info, etc.) |
 
 The Kaggle dataset includes:
@@ -17,7 +18,7 @@ The Kaggle dataset includes:
 - `pit_stops.csv` – pit stop lap numbers and durations
 - `drivers.csv` – driver names and codes
 
-I filtered everything to just 2022-2024 races.
+I preprocessed everything to just the 2022-2024 races.
 
 ### API Integration
 I also grabbed driver info from the OpenF1 API since it has cleaner team names and broadcast names, which helped match drivers across datasets:
