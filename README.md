@@ -25,13 +25,12 @@ I preprocessed everything for the 2022-2024 races only.
 I also grabbed driver info from the OpenF1 API since it has cleaner team names and broadcast names; it played a key role in ensuring consistency across merged datasets.
 ```python
 import requests
-response = requests.get("https://api.openf1.org/v1/drivers?year=2023")
+response = requests.get("https://api.openf1.org/v1/drivers?year=?")
 if response.status_code == 200:
     drivers_data = response.json()
     # extract team names and driver info
 ```
 
-This made the visualization labels way cleaner.
 
 ## Analysis
 I'm doing a correlation analysis between two metrics:
