@@ -1,4 +1,4 @@
-# F1 Pit Stop and Lap Time Analysis (2022–2024)
+# Formula 1 Pit Stop and Lap Time Analysis (2022–2024)
 
 ## Introduction
 My project looks at Formula 1 pit stop efficiency and lap time consistency from 2022 to 2024. As an F1 fan, I've always wondered: do faster pit stops actually help drivers perform better on track? I wanted to see if teams with quick pit crews also have drivers with more consistent lap times. Basically, does having a great pit crew = better driver consistency? Let's find out.
