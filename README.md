@@ -52,6 +52,7 @@ Bar chart: Average Pit Stop Duration by Team
 Bar chart: Lap Time Variance by Driver
 Correlation heatmap of metrics
 (optionally) Pit Stop Over Time Line Charts or Driver Comparison Over Years
+
 SQL Statement used:
 SELECT driver_id, AVG(pit_time_ms) 
 FROM pit_stops 
@@ -82,10 +83,10 @@ Option 2 - Run from command line:
 python main.py
 ```
 
-The code is organized into modules in the `src/` folder:
-- `load_data.py` – loads CSVs and filters for 2022-2024
-- `preprocessing.py` – calculates pit stop averages and lap time variance
-- `analysis.py` – creates all the visualizations
+The code is organized into modules in the `src/` folder and needs to run from 1 to 2 to 3 in order
+1- `load_data.py` – loads CSVs and filters for 2022-2024 
+2- `preprocessing.py` – calculates pit stop averages and lap time variance
+3- `analysis.py` – creates all the visualizations
 
 Results get saved to the `results/` folder.
 
