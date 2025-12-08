@@ -8,9 +8,10 @@ My project looks at Formula 1 pit stop efficiency and lap time consistency from 
 | Source | Link | Format | Description |
 |--------|------|--------|-------------|
 | Formula 1 World Championship (1950–2024) | [Kaggle Dataset](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020) | CSV | Official F1 race data including races, results, drivers, lap times, and pit stops |
+| Formula 1 Pit Stop Dataset (2022–2024) | [Kaggle Link](https://www.kaggle.com/datasets/akashrane2609/formula-1-pit-stop-dataset) | CSV | Detailed pit-stop events, tire info, lap numbers, |
 | OpenF1 API | https://api.openf1.org | JSON (REST API) | Driver and team metadata (broadcast names, team info, etc.) |
 
-The Kaggle dataset includes:
+The main Kaggle dataset includes:
 - `races.csv` – race metadata (season, circuit, date)
 - `results.csv` – finishing positions, points, grid positions
 - `lap_times.csv` – every lap time for every driver
@@ -18,7 +19,7 @@ The Kaggle dataset includes:
 - `drivers.csv` – driver names and codes
 - `constructors.csv` – team names
 
-I filtered everything to just 2022-2024 races.
+I preprocessed everything for the 2022-2024 races only.
 
 ### API Integration
 I also grabbed driver info from the OpenF1 API since it has cleaner team names and broadcast names, which helped match drivers across datasets:
@@ -36,7 +37,7 @@ if response.status_code == 200:
 1. Average Pit Stop Time – per team and per driver from 2022-2024
 2. Lap Time Variance – standard deviation of lap times (consistency measure)
 3. Grid-to-Finish Correlation – starting position vs finish position
-4. Position Gains – positions gained or lost during race
+4. Position Gains – positions gained or lost during the race
 5. Correlation Heatmap – relationships between metrics
 
 ### Methods Used
@@ -62,7 +63,7 @@ GROUP BY driver_id;
 ```
 
 ## Summary of Results
-The analysis shows that pit stop times vary significantly between teams, with top teams averaging 22-23 seconds. Driver consistency (measured by lap variance) also differs across the grid. Starting grid position has a strong influence on final results, though about 30% of drivers gain or lose 3+ positions during races.
+The analysis results that pit stop times vary significantly between teams, with top teams averaging 22-23 seconds. Driver consistency (measured by lap variance) also differs across the grid. Starting grid position has a strong influence on final results, though about 30% of drivers gain or lose 3+ positions during races.
 
 ## How to Run
 
@@ -95,6 +96,6 @@ main.py runs everything automatically in the correct order.
 Results get saved to the `results/` folder and `f1_analysis.db` database.
 
 ### Notes
-- No API keys needed (OpenF1 API is public)
+- OpenF1 API is public
 - Data files are not in the repo - download them yourself
 - If you get errors about missing files, check that all CSVs are in `data/` folder
