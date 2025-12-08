@@ -42,7 +42,7 @@ Metrics Analyzed
 6. Correlation Heatmap – Relationship between performance metrics.
 Methods Used
 SQL-based data filtering and joins for structured event data (following relational database design discussed in class on Nov 4).
-API integration (via requests) to fetch external driver info and validate data sources.
+API integration (via requests) to get external driver info and validate data sources.
 Group-by aggregation and pandas EDA pipelines for metric calculation.
 Standard deviation and correlation coefficient are used to analyze trends.
 Matplotlib and seaborn are used for clean, labeled charts.
