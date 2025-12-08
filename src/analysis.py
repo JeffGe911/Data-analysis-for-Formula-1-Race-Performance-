@@ -14,7 +14,6 @@ RESULTS_DIR.mkdir(exist_ok=True)
 def plot_grid_vs_finish(df):
     """
     Scatter plot: starting grid position vs finishing position
-    Shows if qualifying position predicts race result
     """
     # Only look at drivers who finished (positionOrder > 0)
     df_finished = df[df["positionOrder"] > 0].copy()
