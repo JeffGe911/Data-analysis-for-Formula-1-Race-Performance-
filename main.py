@@ -39,7 +39,7 @@ def main():
         print("Make sure all CSV files are in the data/ folder")
         sys.exit(1)
     
-    # Optional: fetch additional driver info from API
+    # Optional: get additional driver info from API
     print("\n[Step 1b] Fetching driver info from OpenF1 API...")
     api_drivers = fetch_openf1_drivers(year=2023)
     if api_drivers is not None:
