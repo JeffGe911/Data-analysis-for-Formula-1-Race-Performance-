@@ -1,5 +1,5 @@
 """
-Main script to run the complete my Formula 1 analysis pipeline
+Main script to run the complete Formula 1 analysis pipeline
 Usage: python main.py
 """
 
