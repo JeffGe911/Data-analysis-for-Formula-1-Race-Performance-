@@ -33,14 +33,30 @@ if response.status_code == 200:
 
 
 ## Analysis
-I'm doing a correlation analysis between two metrics:
-1. **Average pit stop time** – calculated for each driver across all their stops in 2022-2024
-2. **Lap time variance** – how consistent each driver's lap times are (using standard deviation)
-
-The analysis includes:
-- Scatter plot to show if there's a correlation between pit stop speed and lap consistency
-- Bar charts comparing pit stop performance across different drivers
-- Some additional visualizations to explore the data
+Metrics Analyzed
+1. Average Pit Stop Time – Measured per team and per driver, from all race stops between 2022–2024.
+2. Lap Time Variance – Standard deviation of lap times for each driver, reflecting consistency.
+3. Grid-to-Finish Correlation – Comparison of starting position vs finishing result.
+4. Position Gains – Difference between grid and final position.
+5. Operational Performance Consistency – Variability across races for top teams.
+6. Correlation Heatmap – Relationship between performance metrics.
+Methods Used
+SQL-based data filtering and joins for structured event data (following relational database design discussed in class on Nov 4).
+API integration (via requests) to fetch external driver info and validate data sources.
+Group-by aggregation and pandas EDA pipelines for metric calculation.
+Standard deviation and correlation coefficient are used to analyze trends.
+Matplotlib and seaborn are used for clean, labeled charts.
+## Visualizations
+Bubble plot: Qualifying Position vs Finishing Position
+Bar chart: Average Pit Stop Duration by Team
+Bar chart: Lap Time Variance by Driver
+Correlation heatmap of metrics
+(optionally) Pit Stop Over Time Line Charts or Driver Comparison Over Years
+SQL Statement used:
+SELECT driver_id, AVG(pit_time_ms) 
+FROM pit_stops 
+WHERE year BETWEEN 2022 AND 2024 
+GROUP BY driver_id;
 
 ## Summary of Results
 Drivers with faster pit stops generally showed more consistent lap times, and starting grid position strongly influenced final race results.
@@ -74,6 +90,6 @@ The code is organized into modules in the `src/` folder:
 Results get saved to the `results/` folder.
 
 ### Notes
-- No API keys needed (the OpenF1 API is public)
+- The OpenF1 API is public
 - Make sure you download the data yourself – it's not in the repo
 - If you get any errors about missing data files, double-check that all the CSVs are in the `data/` folder
